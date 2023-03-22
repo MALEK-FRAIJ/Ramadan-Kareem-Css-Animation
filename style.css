@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=League+Spartan:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: linear-gradient(#01c2bf, #01c2bf, #fff 50%, #fff 100%);
+    min-height: 100vh;
+
+}
+
+
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background-color: #0000;
+    display: flex;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    margin: 20px;
+    border-bottom: 3px solid #01c2bf;
+
+}
+
+.card:hover {
+    width: 600px;
+
+}
+
+.card .imgbx {
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+}
+
+.arrows-card {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.arrows-card i {
+    margin: 0 10px;
+    font-size: 40px;
+    color: #01c2bf;
+    animation: arrow-load 2s ease-in-out;
+    transform: rotate(-45deg);
+
+}
+
+@keyframes arrow-load {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(130px, 130px);
+        /* 45,130 */
+    }
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(-45deg) translate(-60px, -60px);
+        /* -45,-60 */
+    }
+}
+
+.animated-text {
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    color: #01c2bf;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 1px 1px 1px;
+
+}
+
+.card .container-lft-side {
+    position: absolute;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #01c2bf;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+
+}
+
+.card:hover .container-lft-side {
+    left: 300px;
+
+}
+
+.card .container-lft-side::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #fff;
+    z-index: 1;
+}
+
+
+.moon-lft {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+
+}
+
+.moon-lft .moon .mask,
+.moon-lft .moon .fill {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.moon-lft .moon .mask {
+    clip: rect(0px, 150px, 150px, 75px);
+}
+
+.moon-lft .star {
+    width: 122px;
+    height: 122px;
+    font-size: 2rem;
+    position: absolute;
+    color: rgb(249, 248, 250);
+    border-radius: 50%;
+    background-color: #01c2bf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.mask .fill {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: rgb(249, 248, 250);
+}
+
+.moon-lft .star i {
+    font-size: 40px;
+
+}
+
+.mask.full,
+.moon .fill {
+    animation: fill infinite 3s;
+    transition: rotate(135deg);
+}
+
+@keyframes fill {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+.card .container-lft-side h3 {
+
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: rgb(249, 248, 250);
+    font-family: 'Cairo', sans-serif;
+    line-height: 1em;
+}
+
+.card .container-lft-side h5 {
+
+    text-align: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: rgb(249, 248, 250);
+    font-family: 'Cairo', sans-serif;
+    line-height: 3em;
+    word-spacing: 5px;
+}
